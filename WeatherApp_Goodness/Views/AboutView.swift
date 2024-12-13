@@ -24,7 +24,7 @@ struct AboutView: View {
                 VStack {
                     Text("Weather App")
                         .font(.largeTitle)
-                        .foregroundColor(.white) 
+                        .foregroundColor(.white)
                     Text("Version 1.0")
                         .font(.subheadline)
                         .foregroundColor(.white)
@@ -58,12 +58,9 @@ struct AboutView: View {
                         .font(.headline)
                         .padding()
                         .foregroundColor(.white)
-                .padding()
+                        .padding()
+                }
             }
         }
     }
-}
-
-#Preview {
-    AboutView()
 }

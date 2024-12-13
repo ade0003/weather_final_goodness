@@ -35,16 +35,6 @@
 			path = WeatherApp_Goodness;
 			sourceTree = "<group>";
 		};
-		C2933B172D0BC59C004962F6 /* WeatherApp_GoodnessTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WeatherApp_GoodnessTests;
-			sourceTree = "<group>";
-		};
-		C2933B212D0BC59D004962F6 /* WeatherApp_GoodnessUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WeatherApp_GoodnessUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				C2933B062D0BC59B004962F6 /* WeatherApp_Goodness */,
-				C2933B172D0BC59C004962F6 /* WeatherApp_GoodnessTests */,
-				C2933B212D0BC59D004962F6 /* WeatherApp_GoodnessUITests */,
 				C2933B052D0BC59B004962F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				C2933B162D0BC59C004962F6 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				C2933B172D0BC59C004962F6 /* WeatherApp_GoodnessTests */,
-			);
 			name = WeatherApp_GoodnessTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				C2933B202D0BC59C004962F6 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				C2933B212D0BC59D004962F6 /* WeatherApp_GoodnessUITests */,
 			);
 			name = WeatherApp_GoodnessUITests;
 			packageProductDependencies = (
