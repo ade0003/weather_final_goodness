@@ -29,6 +29,9 @@ struct CityListView: View {
                                 VStack(alignment: .leading) {
                                     Text(city.name)
                                         .font(.headline)
+                                    Text(city.localTime.formatted(date: .omitted, time: .shortened))
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
                                     Text(city.weatherDescription)
                                         .font(.subheadline)
                                 }
@@ -39,9 +42,10 @@ struct CityListView: View {
                                     .font(.title2)
                             }
                             .padding()
-                            .background(Material.ultraThinMaterial.opacity(0.5))  
+                            .background(Material.ultraThinMaterial.opacity(0.5))
                             .cornerRadius(10)
                         }
+                        .tint(Color("tabBackground"))
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
                     }

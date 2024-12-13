@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+import SwiftUI
+
 @main
 struct WeatherApp: App {
     @StateObject private var settingsStore = SettingsStore()
     @StateObject private var cityListViewModel = CityListViewModel()
-    @State private var selectedTab = 0 
+    @State private var selectedTab = 0
     
     init() {
         let appearance = UITabBarAppearance()
@@ -26,6 +28,10 @@ struct WeatherApp: App {
         
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
+        
+        settingsStore.onRefreshNeeded = { [weak cityListViewModel] in
+            await cityListViewModel?.refreshWeather()
+        }
     }
     
     var body: some Scene {
@@ -36,7 +42,7 @@ struct WeatherApp: App {
                         Label("Cities", systemImage: "list.bullet")
                     }
                     .tag(0)
-                SearchView(selectedTab: $selectedTab)  // Pass the binding
+                SearchView(selectedTab: $selectedTab)
                     .environmentObject(cityListViewModel)
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
@@ -52,5 +58,3 @@ struct WeatherApp: App {
         }
     }
 }
-
-

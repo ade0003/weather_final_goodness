@@ -48,7 +48,7 @@ struct SearchView: View {
                                 }
                             } label: {
                                 Image(systemName: "plus.circle.fill")
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(Color("tabBackground"))
                                     .font(.title2)
                             }
                         }
@@ -72,7 +72,7 @@ struct SearchBarView: View {
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(.gray)
+                .foregroundColor(Color("tabBackground"))
             TextField("Search for a city...", text: $searchText)
                 .textFieldStyle(.roundedBorder)
                 .autocorrectionDisabled(true)

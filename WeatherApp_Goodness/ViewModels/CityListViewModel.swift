@@ -10,10 +10,12 @@ import SwiftUI
 import CoreLocation
 
 
+
 class CityListViewModel: ObservableObject {
     
     @Published var cities: [City] = []
     private let weatherService = WeatherService()
+    private var timer: Timer?
     
     init() {
         
@@ -21,7 +23,20 @@ class CityListViewModel: ObservableObject {
             City(name: "New York", coordinate: CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.0060)),
             City(name: "London", coordinate: CLLocationCoordinate2D(latitude: 51.5074, longitude: -0.1278))
         ]
+        
+        startTimer()
     }
+    
+    func startTimer() {
+            timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] _ in
+                self?.objectWillChange.send()
+            }
+        }
+        
+        deinit {
+            timer?.invalidate()
+        }
+        
     func refreshWeather() async {
         await withTaskGroup(of: Void.self) { group in
             for index in cities.indices {

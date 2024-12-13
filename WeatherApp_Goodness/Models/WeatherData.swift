@@ -10,11 +10,11 @@ struct WeatherData: Codable {
     let main: MainWeather
     let weather: [WeatherCondition]
     let wind: WindData
-    let uvi: Double? 
-
+    let uvi: Double?
+    let timezone: Int
     enum CodingKeys: String, CodingKey {
         case main, weather, wind
-        case uvi
+        case uvi, timezone
     }
 }
 

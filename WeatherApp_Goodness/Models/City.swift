@@ -63,6 +63,8 @@ struct City: Identifiable, Codable {
         self.uvIndex = data.uvi ?? 0.0
         self.windSpeed = data.wind.speed
         self.humidity = data.main.humidity
+        self.timezone = data.timezone  
+
     }
     
     var systemIconName: String {
@@ -83,5 +85,11 @@ struct City: Identifiable, Codable {
         }
     }
     
+    var localTime: Date {
+            let currentUTC = Date()
+            return currentUTC.addingTimeInterval(TimeInterval(timezone))
+        }
+    }
     
-}
+    
+

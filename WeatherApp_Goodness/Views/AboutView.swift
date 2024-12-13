@@ -12,7 +12,7 @@ struct AboutView: View {
     @State private var showKidPicture = false
     
     var body: some View {
-        NavigationStack { // Optional: Wrap in NavigationStack if you want navigation capabilities
+        NavigationStack {
             ZStack {
                 LinearGradient(
                     gradient: Gradient(colors: [Color.blue.opacity(0.3), Color.purple.opacity(0.3)]),
@@ -24,10 +24,10 @@ struct AboutView: View {
                 VStack {
                     Text("Weather App")
                         .font(.largeTitle)
-                        .foregroundColor(.white) // Optional: Change text color for better contrast
+                        .foregroundColor(.white) 
                     Text("Version 1.0")
                         .font(.subheadline)
-                        .foregroundColor(.white) // Optional: Change text color for better contrast
+                        .foregroundColor(.white)
                     
                     Image("me")
                         .resizable()
@@ -37,7 +37,7 @@ struct AboutView: View {
                         .onTapGesture {
                             tapCount += 1
                             if tapCount == 3 {
-                                withAnimation(.easeIn(duration: 0.5)) { // Animate the appearance
+                                withAnimation(.easeIn(duration: 0.5)) {
                                     showKidPicture.toggle()
                                 }
                                 tapCount = 0
@@ -50,16 +50,15 @@ struct AboutView: View {
                             .scaledToFit()
                             .frame(width: 200, height: 100)
                             .clipShape(Circle())
-                            .transition(.scale) // Transition effect
-                            .animation(.easeInOut(duration: 0.5), value: showKidPicture) // Animation for the transition
+                            .transition(.scale)
+                            .animation(.easeInOut(duration: 0.5), value: showKidPicture)
                     }
                     
                     Text("Created by Goodness Ade")
                         .font(.headline)
                         .padding()
-                        .foregroundColor(.white) // Optional: Change text color for better contrast
-                }
-                .padding() // Add padding to the VStack for better layout
+                        .foregroundColor(.white)
+                .padding()
             }
         }
     }
