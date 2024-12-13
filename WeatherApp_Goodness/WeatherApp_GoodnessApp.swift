@@ -18,11 +18,11 @@ struct WeatherApp: App {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "tabBackground")
         
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor(named: "font") ?? UIColor.blue]
-        appearance.stackedLayoutAppearance.selected.iconColor = UIColor(named: "font") ?? UIColor.blue
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor(named: "selected") ?? UIColor.blue]
+        appearance.stackedLayoutAppearance.selected.iconColor = UIColor(named: "selected") ?? UIColor.blue
         
-        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor(named: "background") ?? UIColor.lightGray]
-        appearance.stackedLayoutAppearance.normal.iconColor = UIColor(named: "background") ?? UIColor.lightGray
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor(named: "unselected") ?? UIColor.lightGray]
+        appearance.stackedLayoutAppearance.normal.iconColor = UIColor(named: "unselected") ?? UIColor.lightGray
         
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
